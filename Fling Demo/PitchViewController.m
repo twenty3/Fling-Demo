@@ -191,6 +191,23 @@
     }
     else if ( panRecognizer.state == UIGestureRecognizerStateEnded )
     {
+        // apply the velocity of the pan so we can 'fling' the item
+        // NOTE:
+        //    velocity of the pan isn't always exactly zero when we
+        //    might expect it to be. To work around that we'll only
+        //    add the velocity if it's magnitude was large enough
+        
+        TokenView* tokenBeingDragged = (TokenView*)panRecognizer.view;
+        CGPoint velocity = [panRecognizer velocityInView:self.view];
+        
+        CGFloat magnitude = sqrt( (velocity.x * velocity.x) + (velocity.y * velocity.y) );
+        //NSLog(@"Pan ended with velocity: %@  magnitdue: %.3f", NSStringFromCGPoint(velocity), magnitude);
+        
+        if ( magnitude > 100.0 )
+        {
+            [tokenBeingDragged.dynamicItemBehavior addLinearVelocity:velocity forItem:tokenBeingDragged];
+        }
+        
         self.dragStartingPoint = CGPointZero;
         [self.animator removeBehavior:self.dragAttachmentBehavior];
         self.dragAttachmentBehavior = nil;
