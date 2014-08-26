@@ -6,6 +6,7 @@
 #import "PitchViewController.h"
 
 #import "TokenView.h"
+#import "ReturnToFieldBehavior.h"
 
 @interface PitchViewController () <UIDynamicAnimatorDelegate>
 
@@ -125,7 +126,7 @@
 
 - (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator
 {
-    NSLog(@"Animator has paused");
+    //NSLog(@"Animator has paused");
     
     // When the animator comes to a rest, we may need
     // to remove transient behaviors
@@ -141,6 +142,12 @@
     for ( TokenView* tokenView in self.tokenViews )
     {
         [self.animator addBehavior:tokenView.dynamicItemBehavior];
+
+        // Add a behavior to detect when an item leaves the field to bring it back
+        CGPoint snapToPoint = tokenView.center;
+        snapToPoint.y = CGRectGetMaxY(self.view.bounds) - CGRectGetMidY(tokenView.bounds) - 4.0;
+        ReturnToFieldBehavior* returnBehavior = [[ReturnToFieldBehavior alloc] initWithToken:tokenView snapToPoint:snapToPoint];
+        [self.animator addBehavior:returnBehavior];
     }
     
     [self.animator addBehavior:self.tokenCollisionBehavior];
@@ -191,6 +198,7 @@
     }
     else if ( panRecognizer.state == UIGestureRecognizerStateEnded )
     {
+        [self removeTransientBehaviors];
         // apply the velocity of the pan so we can 'fling' the item
         // NOTE:
         //    velocity of the pan isn't always exactly zero when we
@@ -215,7 +223,7 @@
     else if ( panRecognizer.state == UIGestureRecognizerStateChanged )
     {
         // apply the change in the pan recognizer position (cumulative) to the
-        // the starring part to move our token
+        // the starting point to move our token
         
         // NOTE: if we do the clever trick of reseting the pan recognizer's
         // translation to zero here, it will reset the velocity!
