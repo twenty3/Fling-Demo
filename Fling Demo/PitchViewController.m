@@ -16,6 +16,9 @@
 @property (strong) UICollisionBehavior* fieldCollisionBehavior;
 @property (strong) UICollisionBehavior* tokenCollisionBehavior;
 
+@property (strong, readwrite) UIAttachmentBehavior* dragAttachmentBehavior;
+@property (assign) CGPoint dragStartingPoint;
+
 @end
 
 @implementation PitchViewController
@@ -75,6 +78,9 @@
         {
             TokenView* tokenView = [[TokenView alloc] initWithLabel:label];
             [tokens addObject:tokenView];
+            
+            UIPanGestureRecognizer* dragRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(tokenDidPan:)];
+            [tokenView addGestureRecognizer:dragRecognizer];
         }
         
         gTokenViews = [tokens copy];
@@ -125,6 +131,41 @@
     
     [self.animator addBehavior:self.fieldCollisionBehavior];
     NSLog(@"+ Added Collision Behavior");
+}
+
+-(void) tokenDidPan:(UIPanGestureRecognizer*)panRecognizer
+{
+    // We'll only add the attachment for dragging, when a drag starts
+    // otherwise the attachment will hold the item in place even
+    // when we are not moving it.
+    if ( panRecognizer.state == UIGestureRecognizerStateBegan )
+    {
+        TokenView* viewToDrag = (TokenView*)panRecognizer.view;
+        
+        // We'll add the attachment at the center of the view
+        // and use the delta during each pan gesture update to adjust the attachment location
+        // Using the center will keep the view from rotate around the touched point
+        self.dragStartingPoint = viewToDrag.center;
+        self.dragAttachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:viewToDrag attachedToAnchor:viewToDrag.center];
+        [self.animator addBehavior:self.dragAttachmentBehavior];
+    }
+    else if ( panRecognizer.state == UIGestureRecognizerStateEnded )
+    {
+        self.dragStartingPoint = CGPointZero;
+        [self.animator removeBehavior:self.dragAttachmentBehavior];
+        self.dragAttachmentBehavior = nil;
+    }
+    else if ( panRecognizer.state == UIGestureRecognizerStateChanged )
+    {
+        // apply the change in the pan recognizer position (cumulative) to the
+        // the starring part to move our token
+        
+        // NOTE: if we do the clever trick of reseting the pan recognizer's
+        // translation to zero here, it will reset the velocity!
+        CGPoint delta = [panRecognizer translationInView:self.view];
+        CGPoint newPoint = {self.dragStartingPoint.x + delta.x, self.dragStartingPoint.y + delta.y};
+        [self.dragAttachmentBehavior setAnchorPoint:newPoint];
+    }
 }
 
 
