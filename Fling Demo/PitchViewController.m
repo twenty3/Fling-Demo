@@ -7,6 +7,7 @@
 
 #import "TokenView.h"
 #import "ReturnToFieldBehavior.h"
+#import "TokenFormation.h"
 
 @interface PitchViewController () <UIDynamicAnimatorDelegate>
 
@@ -54,6 +55,14 @@
     fieldTapRecognizer.numberOfTapsRequired = 2;
     fieldTapRecognizer.numberOfTouchesRequired = 1;
     [self.view addGestureRecognizer:fieldTapRecognizer];
+    
+    // Gesture recognizer to snap the tokens into a formation
+    UILongPressGestureRecognizer* longTapRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(fieldLongTapped:)];
+    longTapRecognizer.numberOfTapsRequired = 0;
+    longTapRecognizer.numberOfTouchesRequired = 1;
+    [self.view addGestureRecognizer:longTapRecognizer];
+    
+    [fieldTapRecognizer requireGestureRecognizerToFail:longTapRecognizer];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -176,6 +185,47 @@
     }
     
     [self.transientBehaviors removeAllObjects];
+    
+    // Re-add the token collisions if we turned them off for a transient behavior
+    if ( self.tokenCollisionBehavior.dynamicAnimator == nil )
+    {
+        [self.animator addBehavior:self.tokenCollisionBehavior];
+    }
+}
+
+- (void) snapTokensToFormation:(TokenFormation*)formation
+{
+    NSLog(@"MOVING INTO FORMATION!");
+    
+    NSUInteger index = 0;
+    
+    for ( TokenView* tokenView in self.tokenViews )
+    {
+        UISnapBehavior* snapBehavior = [[UISnapBehavior alloc] initWithItem:tokenView snapToPoint:[formation locationForTokenAtIndex:index]];
+        
+        CGFloat damping = 0.5 + ( (CGFloat)rand() / (CGFloat)( RAND_MAX/(1.0 - 0.5) ) );
+        snapBehavior.damping = damping;
+        
+        const CGFloat maxVelocity = 1000.0;
+        CGFloat xVelocity = -maxVelocity + ( (CGFloat)rand() / (CGFloat)( RAND_MAX/(maxVelocity - -maxVelocity) ) );
+        CGFloat yVelocity = -maxVelocity + ( (CGFloat)rand() / (CGFloat)( RAND_MAX/(maxVelocity - -maxVelocity) ) );
+        
+        [tokenView.dynamicItemBehavior addLinearVelocity:(CGPoint){xVelocity, yVelocity} forItem:tokenView];
+        
+        //GOTCHA: adding a snap behavior won't necessarily restart a paused animator.
+        // adding a little velocity does though!
+        
+        CGFloat angularVelocity = -100.0 + ( (CGFloat)rand() / (CGFloat)( RAND_MAX/(100.0 - -100.0) ) );
+        [tokenView.dynamicItemBehavior addAngularVelocity:angularVelocity forItem:tokenView];
+        
+        [self.animator addBehavior:snapBehavior];
+        [self.transientBehaviors addObject:snapBehavior];
+        
+        // Remove the token collisions behavior so they don't interfere with each other
+        [self.animator removeBehavior:self.tokenCollisionBehavior];
+        
+        index++;
+    }
 }
 
 #pragma mark - Actions
@@ -237,6 +287,16 @@
 {
     // Resest the tokens to the bottom
     [self addCollectAtBottomBehaviors];
+}
+
+- (void) fieldLongTapped:(UIGestureRecognizer*)recognizer
+{
+    if ( recognizer.state == UIGestureRecognizerStateBegan )
+    {
+        // put everyting in a 4 4 2 formation
+        TokenFormation* formation = [TokenFormation formationWithFourFourTwo];
+        [self snapTokensToFormation:formation];
+    }
 }
 
 #pragma mark - Debug
