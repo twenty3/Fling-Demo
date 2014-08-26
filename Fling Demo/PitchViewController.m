@@ -11,6 +11,11 @@
 
 @property (strong, readonly) NSArray* tokenViews;
 
+@property (strong) UIDynamicAnimator* animator;
+@property (strong) UIGravityBehavior* gravityBehavior;
+@property (strong) UICollisionBehavior* fieldCollisionBehavior;
+@property (strong) UICollisionBehavior* tokenCollisionBehavior;
+
 @end
 
 @implementation PitchViewController
@@ -21,6 +26,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+    
+    self.fieldCollisionBehavior = [[UICollisionBehavior alloc] initWithItems:self.tokenViews];
+    self.fieldCollisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
+    self.fieldCollisionBehavior.collisionMode = UICollisionBehaviorModeBoundaries;
+    
+    self.tokenCollisionBehavior = [[UICollisionBehavior alloc] initWithItems:self.tokenViews];
+    self.tokenCollisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
+    self.tokenCollisionBehavior.collisionMode = UICollisionBehaviorModeItems;
+    
+    self.gravityBehavior = [[UIGravityBehavior alloc] initWithItems:self.tokenViews];
+    self.gravityBehavior.magnitude = 10.0;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -28,6 +46,11 @@
     [super viewDidAppear:animated];
 
     [self addDynamicTokensToView];
+    [self addInitialBehaviors];
+    
+    // When we first appear, use gravity to drop all the tokens
+    // and a collision boundary to contain them at the bottom
+    [self addCollectAtBottomBehaviors];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -79,6 +102,29 @@
         tokenView.center = (CGPoint){x, y};
         [self.view addSubview:tokenView];
     }
+}
+
+
+#pragma mark - Behaviors
+
+- (void) addInitialBehaviors
+{
+    // Add each token's item behavior
+    for ( TokenView* tokenView in self.tokenViews )
+    {
+        [self.animator addBehavior:tokenView.dynamicItemBehavior];
+    }
+    
+    [self.animator addBehavior:self.tokenCollisionBehavior];
+}
+
+- (void) addCollectAtBottomBehaviors
+{
+    [self.animator addBehavior:self.gravityBehavior];
+    NSLog(@"+ Added Gravity Behavior");
+    
+    [self.animator addBehavior:self.fieldCollisionBehavior];
+    NSLog(@"+ Added Collision Behavior");
 }
 
 

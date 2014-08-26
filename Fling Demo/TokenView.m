@@ -12,6 +12,9 @@ const CGFloat TokenViewDiameter = 75.0;
 @property (strong) UIColor* primaryColor;
 @property (strong) UIColor* alternateColor;
 
+@property (strong, readwrite) UIDynamicItemBehavior* dynamicItemBehavior;
+
+
 @end
 
 @implementation TokenView
@@ -42,6 +45,13 @@ const CGFloat TokenViewDiameter = 75.0;
         doubleTapRecognizer.numberOfTapsRequired = 2;
         doubleTapRecognizer.numberOfTouchesRequired = 1;
         [self addGestureRecognizer:doubleTapRecognizer];
+        
+        self.dynamicItemBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[self]];
+        self.dynamicItemBehavior.elasticity = 0.1;
+        self.dynamicItemBehavior.resistance = 7.0;
+        self.dynamicItemBehavior.angularResistance = 1.0;
+        self.dynamicItemBehavior.friction = 1.0;
+        self.dynamicItemBehavior.allowsRotation = YES;
     }
     return self;
 }

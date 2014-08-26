@@ -10,5 +10,4 @@
 
 - (instancetype)initWithLabel:(NSString*)label;
 
-
 @end
