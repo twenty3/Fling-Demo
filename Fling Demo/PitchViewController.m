@@ -7,7 +7,7 @@
 
 #import "TokenView.h"
 
-@interface PitchViewController ()
+@interface PitchViewController () <UIDynamicAnimatorDelegate>
 
 @property (strong, readonly) NSArray* tokenViews;
 
@@ -19,10 +19,12 @@
 @property (strong, readwrite) UIAttachmentBehavior* dragAttachmentBehavior;
 @property (assign) CGPoint dragStartingPoint;
 
+@property (strong) NSMutableArray* transientBehaviors;
+
+
 @end
 
 @implementation PitchViewController
-
 
 #pragma mark - UIViewController Presentation
 
@@ -31,6 +33,7 @@
     [super viewDidLoad];
     
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+    self.animator.delegate = self;
     
     self.fieldCollisionBehavior = [[UICollisionBehavior alloc] initWithItems:self.tokenViews];
     self.fieldCollisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
@@ -42,6 +45,14 @@
     
     self.gravityBehavior = [[UIGravityBehavior alloc] initWithItems:self.tokenViews];
     self.gravityBehavior.magnitude = 10.0;
+    
+    self.transientBehaviors = [NSMutableArray new];
+    
+    // Gesture recognizer so we can reset the tokens
+    UITapGestureRecognizer* fieldTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(fieldTapped:)];
+    fieldTapRecognizer.numberOfTapsRequired = 2;
+    fieldTapRecognizer.numberOfTouchesRequired = 1;
+    [self.view addGestureRecognizer:fieldTapRecognizer];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -110,6 +121,17 @@
     }
 }
 
+#pragma mark - UIDynamicAnimatorDelegate
+
+- (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator
+{
+    NSLog(@"Animator has paused");
+    
+    // When the animator comes to a rest, we may need
+    // to remove transient behaviors
+    
+    [self removeTransientBehaviors];
+}
 
 #pragma mark - Behaviors
 
@@ -127,11 +149,29 @@
 - (void) addCollectAtBottomBehaviors
 {
     [self.animator addBehavior:self.gravityBehavior];
+    [self.transientBehaviors addObject:self.gravityBehavior];
     NSLog(@"+ Added Gravity Behavior");
     
     [self.animator addBehavior:self.fieldCollisionBehavior];
+    [self.transientBehaviors addObject:self.fieldCollisionBehavior];
     NSLog(@"+ Added Collision Behavior");
 }
+
+- (void) removeTransientBehaviors
+{
+    if ( self.transientBehaviors == nil || self.transientBehaviors.count == 0 ) return;
+    
+    NSLog(@"Removing Transient Behaviors");
+    
+    for ( UIDynamicBehavior* behavior in self.transientBehaviors )
+    {
+        [self.animator removeBehavior:behavior];
+    }
+    
+    [self.transientBehaviors removeAllObjects];
+}
+
+#pragma mark - Actions
 
 -(void) tokenDidPan:(UIPanGestureRecognizer*)panRecognizer
 {
@@ -168,6 +208,11 @@
     }
 }
 
+- (void) fieldTapped:(UITapGestureRecognizer*)recognizer
+{
+    // Resest the tokens to the bottom
+    [self addCollectAtBottomBehaviors];
+}
 
 #pragma mark - Debug
 
