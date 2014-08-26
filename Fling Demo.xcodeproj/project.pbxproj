@@ -1,0 +1,473 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01CC610719AC2FB90096B953 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CC610619AC2FB90096B953 /* Foundation.framework */; };
+		01CC610919AC2FB90096B953 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CC610819AC2FB90096B953 /* CoreGraphics.framework */; };
+		01CC610B19AC2FB90096B953 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CC610A19AC2FB90096B953 /* UIKit.framework */; };
+		01CC611119AC2FB90096B953 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01CC610F19AC2FB90096B953 /* InfoPlist.strings */; };
+		01CC611319AC2FB90096B953 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CC611219AC2FB90096B953 /* main.m */; };
+		01CC611719AC2FB90096B953 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CC611619AC2FB90096B953 /* AppDelegate.m */; };
+		01CC611A19AC2FB90096B953 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01CC611819AC2FB90096B953 /* Main.storyboard */; };
+		01CC611D19AC2FB90096B953 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CC611C19AC2FB90096B953 /* ViewController.m */; };
+		01CC611F19AC2FB90096B953 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01CC611E19AC2FB90096B953 /* Images.xcassets */; };
+		01CC612619AC2FB90096B953 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CC612519AC2FB90096B953 /* XCTest.framework */; };
+		01CC612719AC2FB90096B953 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CC610619AC2FB90096B953 /* Foundation.framework */; };
+		01CC612819AC2FB90096B953 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CC610A19AC2FB90096B953 /* UIKit.framework */; };
+		01CC613019AC2FB90096B953 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01CC612E19AC2FB90096B953 /* InfoPlist.strings */; };
+		01CC613219AC2FB90096B953 /* Fling_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CC613119AC2FB90096B953 /* Fling_DemoTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		01CC612919AC2FB90096B953 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 01CC60FB19AC2FB90096B953 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 01CC610219AC2FB90096B953;
+			remoteInfo = "Fling Demo";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01CC610319AC2FB90096B953 /* Fling Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fling Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		01CC610619AC2FB90096B953 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		01CC610819AC2FB90096B953 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		01CC610A19AC2FB90096B953 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		01CC610E19AC2FB90096B953 /* Fling Demo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Fling Demo-Info.plist"; sourceTree = "<group>"; };
+		01CC611019AC2FB90096B953 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		01CC611219AC2FB90096B953 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		01CC611419AC2FB90096B953 /* Fling Demo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fling Demo-Prefix.pch"; sourceTree = "<group>"; };
+		01CC611519AC2FB90096B953 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		01CC611619AC2FB90096B953 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		01CC611919AC2FB90096B953 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		01CC611B19AC2FB90096B953 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		01CC611C19AC2FB90096B953 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		01CC611E19AC2FB90096B953 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		01CC612419AC2FB90096B953 /* Fling DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fling DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		01CC612519AC2FB90096B953 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		01CC612D19AC2FB90096B953 /* Fling DemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Fling DemoTests-Info.plist"; sourceTree = "<group>"; };
+		01CC612F19AC2FB90096B953 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		01CC613119AC2FB90096B953 /* Fling_DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Fling_DemoTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		01CC610019AC2FB90096B953 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01CC610919AC2FB90096B953 /* CoreGraphics.framework in Frameworks */,
+				01CC610B19AC2FB90096B953 /* UIKit.framework in Frameworks */,
+				01CC610719AC2FB90096B953 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01CC612119AC2FB90096B953 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01CC612619AC2FB90096B953 /* XCTest.framework in Frameworks */,
+				01CC612819AC2FB90096B953 /* UIKit.framework in Frameworks */,
+				01CC612719AC2FB90096B953 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01CC60FA19AC2FB90096B953 = {
+			isa = PBXGroup;
+			children = (
+				01CC610C19AC2FB90096B953 /* Fling Demo */,
+				01CC612B19AC2FB90096B953 /* Fling DemoTests */,
+				01CC610519AC2FB90096B953 /* Frameworks */,
+				01CC610419AC2FB90096B953 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		01CC610419AC2FB90096B953 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				01CC610319AC2FB90096B953 /* Fling Demo.app */,
+				01CC612419AC2FB90096B953 /* Fling DemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		01CC610519AC2FB90096B953 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01CC610619AC2FB90096B953 /* Foundation.framework */,
+				01CC610819AC2FB90096B953 /* CoreGraphics.framework */,
+				01CC610A19AC2FB90096B953 /* UIKit.framework */,
+				01CC612519AC2FB90096B953 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		01CC610C19AC2FB90096B953 /* Fling Demo */ = {
+			isa = PBXGroup;
+			children = (
+				01CC611519AC2FB90096B953 /* AppDelegate.h */,
+				01CC611619AC2FB90096B953 /* AppDelegate.m */,
+				01CC611819AC2FB90096B953 /* Main.storyboard */,
+				01CC611B19AC2FB90096B953 /* ViewController.h */,
+				01CC611C19AC2FB90096B953 /* ViewController.m */,
+				01CC611E19AC2FB90096B953 /* Images.xcassets */,
+				01CC610D19AC2FB90096B953 /* Supporting Files */,
+			);
+			path = "Fling Demo";
+			sourceTree = "<group>";
+		};
+		01CC610D19AC2FB90096B953 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				01CC610E19AC2FB90096B953 /* Fling Demo-Info.plist */,
+				01CC610F19AC2FB90096B953 /* InfoPlist.strings */,
+				01CC611219AC2FB90096B953 /* main.m */,
+				01CC611419AC2FB90096B953 /* Fling Demo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		01CC612B19AC2FB90096B953 /* Fling DemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				01CC613119AC2FB90096B953 /* Fling_DemoTests.m */,
+				01CC612C19AC2FB90096B953 /* Supporting Files */,
+			);
+			path = "Fling DemoTests";
+			sourceTree = "<group>";
+		};
+		01CC612C19AC2FB90096B953 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				01CC612D19AC2FB90096B953 /* Fling DemoTests-Info.plist */,
+				01CC612E19AC2FB90096B953 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		01CC610219AC2FB90096B953 /* Fling Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01CC613519AC2FB90096B953 /* Build configuration list for PBXNativeTarget "Fling Demo" */;
+			buildPhases = (
+				01CC60FF19AC2FB90096B953 /* Sources */,
+				01CC610019AC2FB90096B953 /* Frameworks */,
+				01CC610119AC2FB90096B953 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Fling Demo";
+			productName = "Fling Demo";
+			productReference = 01CC610319AC2FB90096B953 /* Fling Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		01CC612319AC2FB90096B953 /* Fling DemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01CC613819AC2FB90096B953 /* Build configuration list for PBXNativeTarget "Fling DemoTests" */;
+			buildPhases = (
+				01CC612019AC2FB90096B953 /* Sources */,
+				01CC612119AC2FB90096B953 /* Frameworks */,
+				01CC612219AC2FB90096B953 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01CC612A19AC2FB90096B953 /* PBXTargetDependency */,
+			);
+			name = "Fling DemoTests";
+			productName = "Fling DemoTests";
+			productReference = 01CC612419AC2FB90096B953 /* Fling DemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		01CC60FB19AC2FB90096B953 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Aged and Distilled";
+				TargetAttributes = {
+					01CC612319AC2FB90096B953 = {
+						TestTargetID = 01CC610219AC2FB90096B953;
+					};
+				};
+			};
+			buildConfigurationList = 01CC60FE19AC2FB90096B953 /* Build configuration list for PBXProject "Fling Demo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 01CC60FA19AC2FB90096B953;
+			productRefGroup = 01CC610419AC2FB90096B953 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				01CC610219AC2FB90096B953 /* Fling Demo */,
+				01CC612319AC2FB90096B953 /* Fling DemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		01CC610119AC2FB90096B953 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01CC611F19AC2FB90096B953 /* Images.xcassets in Resources */,
+				01CC611119AC2FB90096B953 /* InfoPlist.strings in Resources */,
+				01CC611A19AC2FB90096B953 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01CC612219AC2FB90096B953 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01CC613019AC2FB90096B953 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01CC60FF19AC2FB90096B953 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01CC611D19AC2FB90096B953 /* ViewController.m in Sources */,
+				01CC611719AC2FB90096B953 /* AppDelegate.m in Sources */,
+				01CC611319AC2FB90096B953 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01CC612019AC2FB90096B953 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01CC613219AC2FB90096B953 /* Fling_DemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		01CC612A19AC2FB90096B953 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 01CC610219AC2FB90096B953 /* Fling Demo */;
+			targetProxy = 01CC612919AC2FB90096B953 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		01CC610F19AC2FB90096B953 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01CC611019AC2FB90096B953 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		01CC611819AC2FB90096B953 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01CC611919AC2FB90096B953 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		01CC612E19AC2FB90096B953 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01CC612F19AC2FB90096B953 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		01CC613319AC2FB90096B953 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		01CC613419AC2FB90096B953 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		01CC613619AC2FB90096B953 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Fling Demo/Fling Demo-Prefix.pch";
+				INFOPLIST_FILE = "Fling Demo/Fling Demo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		01CC613719AC2FB90096B953 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Fling Demo/Fling Demo-Prefix.pch";
+				INFOPLIST_FILE = "Fling Demo/Fling Demo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		01CC613919AC2FB90096B953 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Fling Demo.app/Fling Demo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Fling Demo/Fling Demo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Fling DemoTests/Fling DemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		01CC613A19AC2FB90096B953 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Fling Demo.app/Fling Demo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Fling Demo/Fling Demo-Prefix.pch";
+				INFOPLIST_FILE = "Fling DemoTests/Fling DemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		01CC60FE19AC2FB90096B953 /* Build configuration list for PBXProject "Fling Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01CC613319AC2FB90096B953 /* Debug */,
+				01CC613419AC2FB90096B953 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01CC613519AC2FB90096B953 /* Build configuration list for PBXNativeTarget "Fling Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01CC613619AC2FB90096B953 /* Debug */,
+				01CC613719AC2FB90096B953 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		01CC613819AC2FB90096B953 /* Build configuration list for PBXNativeTarget "Fling DemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01CC613919AC2FB90096B953 /* Debug */,
+				01CC613A19AC2FB90096B953 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 01CC60FB19AC2FB90096B953 /* Project object */;
+}
