@@ -75,7 +75,7 @@
             [self addChildBehavior:self.pushOpacityBehavior];
             [self addChildBehavior:self.token.opacityItem.dynamicItemBehavior];
         }
-        else if ( self.snapToBottomBehavior != nil )
+        else if ( self.snapToBottomBehavior != nil || self.pushOpacityBehavior != nil )
         {
             CGPoint itemVelocity = [self.token.dynamicItemBehavior linearVelocityForItem:self.token];
             CGFloat magnitude = sqrt( (itemVelocity.x * itemVelocity.x) + (itemVelocity.y * itemVelocity.y) );
