@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0172FAAF19AC3503002585A8 /* TokenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0172FAAE19AC3503002585A8 /* TokenView.m */; };
+		019E3B6319AE28C700F656AF /* OpacityDynamicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 019E3B6219AE28C700F656AF /* OpacityDynamicItem.m */; };
 		01CC610719AC2FB90096B953 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CC610619AC2FB90096B953 /* Foundation.framework */; };
 		01CC610919AC2FB90096B953 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CC610819AC2FB90096B953 /* CoreGraphics.framework */; };
 		01CC610B19AC2FB90096B953 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CC610A19AC2FB90096B953 /* UIKit.framework */; };
@@ -37,6 +38,8 @@
 /* Begin PBXFileReference section */
 		0172FAAD19AC3503002585A8 /* TokenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenView.h; sourceTree = "<group>"; };
 		0172FAAE19AC3503002585A8 /* TokenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenView.m; sourceTree = "<group>"; };
+		019E3B6119AE28C700F656AF /* OpacityDynamicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpacityDynamicItem.h; sourceTree = "<group>"; };
+		019E3B6219AE28C700F656AF /* OpacityDynamicItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpacityDynamicItem.m; sourceTree = "<group>"; };
 		01CC610319AC2FB90096B953 /* Fling Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fling Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01CC610619AC2FB90096B953 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		01CC610819AC2FB90096B953 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -92,6 +95,8 @@
 				01D4D23419AC764400D2C446 /* ReturnToFieldBehavior.m */,
 				0172FAAD19AC3503002585A8 /* TokenView.h */,
 				0172FAAE19AC3503002585A8 /* TokenView.m */,
+				019E3B6119AE28C700F656AF /* OpacityDynamicItem.h */,
+				019E3B6219AE28C700F656AF /* OpacityDynamicItem.m */,
 			);
 			name = Tokens;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01CC611D19AC2FB90096B953 /* PitchViewController.m in Sources */,
+				019E3B6319AE28C700F656AF /* OpacityDynamicItem.m in Sources */,
 				01CC611719AC2FB90096B953 /* AppDelegate.m in Sources */,
 				0172FAAF19AC3503002585A8 /* TokenView.m in Sources */,
 				01D4D23519AC764400D2C446 /* ReturnToFieldBehavior.m in Sources */,

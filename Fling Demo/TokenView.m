@@ -52,6 +52,8 @@ const CGFloat TokenViewDiameter = 75.0;
         self.dynamicItemBehavior.angularResistance = 1.0;
         self.dynamicItemBehavior.friction = 1.0;
         self.dynamicItemBehavior.allowsRotation = YES;
+        
+        self.opacityItem = [[OpacityDynamicItem alloc] initWithView:self];
     }
     return self;
 }

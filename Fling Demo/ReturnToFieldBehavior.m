@@ -11,6 +11,7 @@
 @property (readwrite, strong) TokenView* token;
 @property (assign) CGPoint snapToPoint;
 @property (strong) UISnapBehavior* snapToBottomBehavior;
+@property (strong) UIPushBehavior* pushOpacityBehavior;
 
 @end
 
@@ -64,6 +65,15 @@
             self.snapToBottomBehavior= [[UISnapBehavior alloc] initWithItem:self.token snapToPoint:self.snapToPoint];
             self.snapToBottomBehavior.damping = 0.9;
             [self addChildBehavior:self.snapToBottomBehavior];
+            
+            // Drive the opacity of the item with the animator
+            self.token.alpha = 0.0;
+            
+            self.pushOpacityBehavior = [[UIPushBehavior alloc] initWithItems:@[self.token.opacityItem] mode:UIPushBehaviorModeInstantaneous];
+            self.pushOpacityBehavior.magnitude = 2.0;
+            
+            [self addChildBehavior:self.pushOpacityBehavior];
+            [self addChildBehavior:self.token.opacityItem.dynamicItemBehavior];
         }
         else if ( self.snapToBottomBehavior != nil )
         {
@@ -74,6 +84,15 @@
             {
                 [self removeChildBehavior:self.snapToBottomBehavior];
                 self.snapToBottomBehavior = nil;
+            }
+            
+            CGPoint opacityVelocty = [self.token.opacityItem.dynamicItemBehavior linearVelocityForItem:self.token.opacityItem];
+            if ( opacityVelocty.x < 0.01 )
+            {
+                [self removeChildBehavior:self.pushOpacityBehavior];
+                [self removeChildBehavior:self.token.opacityItem.dynamicItemBehavior];
+                self.pushOpacityBehavior = nil;
+                self.token.alpha = 1.0;
             }
         }
     };
