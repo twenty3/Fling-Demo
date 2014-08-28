@@ -18,22 +18,9 @@
 		01CC611A19AC2FB90096B953 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01CC611819AC2FB90096B953 /* Main.storyboard */; };
 		01CC611D19AC2FB90096B953 /* PitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CC611C19AC2FB90096B953 /* PitchViewController.m */; };
 		01CC611F19AC2FB90096B953 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01CC611E19AC2FB90096B953 /* Images.xcassets */; };
-		01CC612619AC2FB90096B953 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CC612519AC2FB90096B953 /* XCTest.framework */; };
-		01CC612719AC2FB90096B953 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CC610619AC2FB90096B953 /* Foundation.framework */; };
-		01CC612819AC2FB90096B953 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CC610A19AC2FB90096B953 /* UIKit.framework */; };
 		01D4D23519AC764400D2C446 /* ReturnToFieldBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D4D23419AC764400D2C446 /* ReturnToFieldBehavior.m */; };
 		01D4D23819AC81BD00D2C446 /* TokenFormation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D4D23719AC81BD00D2C446 /* TokenFormation.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		01CC612919AC2FB90096B953 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 01CC60FB19AC2FB90096B953 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 01CC610219AC2FB90096B953;
-			remoteInfo = "Fling Demo";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0172FAAD19AC3503002585A8 /* TokenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenView.h; sourceTree = "<group>"; };
@@ -54,7 +41,6 @@
 		01CC611B19AC2FB90096B953 /* PitchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PitchViewController.h; sourceTree = "<group>"; };
 		01CC611C19AC2FB90096B953 /* PitchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PitchViewController.m; sourceTree = "<group>"; };
 		01CC611E19AC2FB90096B953 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		01CC612419AC2FB90096B953 /* Fling DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fling DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01CC612519AC2FB90096B953 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		01D4D23319AC764400D2C446 /* ReturnToFieldBehavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReturnToFieldBehavior.h; sourceTree = "<group>"; };
 		01D4D23419AC764400D2C446 /* ReturnToFieldBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReturnToFieldBehavior.m; sourceTree = "<group>"; };
@@ -70,16 +56,6 @@
 				01CC610919AC2FB90096B953 /* CoreGraphics.framework in Frameworks */,
 				01CC610B19AC2FB90096B953 /* UIKit.framework in Frameworks */,
 				01CC610719AC2FB90096B953 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		01CC612119AC2FB90096B953 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				01CC612619AC2FB90096B953 /* XCTest.framework in Frameworks */,
-				01CC612819AC2FB90096B953 /* UIKit.framework in Frameworks */,
-				01CC612719AC2FB90096B953 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,7 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				01CC610319AC2FB90096B953 /* Fling Demo.app */,
-				01CC612419AC2FB90096B953 /* Fling DemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -176,24 +151,6 @@
 			productReference = 01CC610319AC2FB90096B953 /* Fling Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		01CC612319AC2FB90096B953 /* Fling DemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 01CC613819AC2FB90096B953 /* Build configuration list for PBXNativeTarget "Fling DemoTests" */;
-			buildPhases = (
-				01CC612019AC2FB90096B953 /* Sources */,
-				01CC612119AC2FB90096B953 /* Frameworks */,
-				01CC612219AC2FB90096B953 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				01CC612A19AC2FB90096B953 /* PBXTargetDependency */,
-			);
-			name = "Fling DemoTests";
-			productName = "Fling DemoTests";
-			productReference = 01CC612419AC2FB90096B953 /* Fling DemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -217,7 +174,6 @@
 			projectRoot = "";
 			targets = (
 				01CC610219AC2FB90096B953 /* Fling Demo */,
-				01CC612319AC2FB90096B953 /* Fling DemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -230,13 +186,6 @@
 				01CC611F19AC2FB90096B953 /* Images.xcassets in Resources */,
 				01CC611119AC2FB90096B953 /* InfoPlist.strings in Resources */,
 				01CC611A19AC2FB90096B953 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		01CC612219AC2FB90096B953 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,22 +206,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		01CC612019AC2FB90096B953 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		01CC612A19AC2FB90096B953 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 01CC610219AC2FB90096B953 /* Fling Demo */;
-			targetProxy = 01CC612919AC2FB90096B953 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		01CC610F19AC2FB90096B953 /* InfoPlist.strings */ = {
@@ -392,42 +326,6 @@
 			};
 			name = Release;
 		};
-		01CC613919AC2FB90096B953 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Fling Demo/Fling Demo-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Fling DemoTests/Fling DemoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		01CC613A19AC2FB90096B953 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Fling Demo/Fling Demo-Prefix.pch";
-				INFOPLIST_FILE = "Fling DemoTests/Fling DemoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -445,15 +343,6 @@
 			buildConfigurations = (
 				01CC613619AC2FB90096B953 /* Debug */,
 				01CC613719AC2FB90096B953 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		01CC613819AC2FB90096B953 /* Build configuration list for PBXNativeTarget "Fling DemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				01CC613919AC2FB90096B953 /* Debug */,
-				01CC613A19AC2FB90096B953 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
